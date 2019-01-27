@@ -113,6 +113,7 @@
                                 </segments>
                                 <color key="tintColor" red="0.11771357690000001" green="0.80001214379999996" blue="0.042069982649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
+                                    <action selector="UpdateDefaultPercent:" destination="Fzj-VN-HLQ" eventType="editingChanged" id="k9T-8q-hrd"/>
                                     <action selector="calculateTip:" destination="BYZ-38-t0r" eventType="valueChanged" id="KjO-xW-Sos"/>
                                 </connections>
                             </segmentedControl>
@@ -123,13 +124,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddD-Zq-AcN">
+                                <rect key="frame" x="76" y="525" width="222" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                <state key="normal" title="Save Changes">
+                                    <color key="titleColor" red="0.11771357690000001" green="0.80001214379999996" blue="0.042069982649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="UpdateDefaultPercent:" destination="Fzj-VN-HLQ" eventType="touchDown" id="kwX-bC-fp8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="WvA-PX-7Bk"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="kwm-MO-m7o" appends="YES" id="E05-em-vw6"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="BS9-uc-1s1"/>
+                    <connections>
+                        <outlet property="TipViewController" destination="5UL-9G-rS0" id="IFS-88-4G7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jaR-i6-bfx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="kwm-MO-m7o"/>
             </objects>
             <point key="canvasLocation" x="3636" y="131.78410794602701"/>
         </scene>

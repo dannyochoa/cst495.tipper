@@ -13,13 +13,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipLabel: UILabel!
     @IBOutlet weak var totalLabel: UILabel!
-    
+
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     override func viewDidLoad() {
         billField.becomeFirstResponder()
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        let defaults = UserDefaults.standard
+    
+        tipControl.selectedSegmentIndex = defaults.integer(forKey: "segmentIndex")
     }
 
     @IBAction func onTap(_ sender: Any) {

@@ -10,13 +10,26 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak var tipViewController: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func UpdateDefaultPercent(_ sender: Any) {
+        print(":gere")
+        print(tipViewController.selectedSegmentIndex)
+        
+        //Access UserDefaults
+        let defaults = UserDefaults.standard
+        
+        // Set a String value for some key.
+        defaults.set(tipViewController.selectedSegmentIndex, forKey: "segmentIndex")
+        defaults.synchronize()
+    }
+    
     /*
     // MARK: - Navigation
 
